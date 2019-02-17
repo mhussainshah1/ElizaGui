@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="367.5892857142857" y="0.0">game.DatabaseWord</node>
+    <node x="220.08928571428572" y="440.0">gui.Eliza</node>
+    <node x="302.0" y="327.0">gui.Response</node>
+    <node x="392.0892857142857" y="102.0">game.Game</node>
+    <node x="0.0" y="316.0">util.FileOperationOnList</node>
+    <node x="370.0892857142857" y="204.0">game.HangmanApp</node>
+    <node x="0.0" y="537.0">gui.IColorCode</node>
+    <node x="153.0" y="537.0">Main</node>
+    <node x="232.08928571428572" y="204.0">gui.PigLatin</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="gui.Response" target="game.HangmanApp">
+      <point x="32.0" y="-26.0" />
+      <point x="398.0" y="286.0" />
+      <point x="445.5892857142857" y="286.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="gui.Eliza" target="util.FileOperationOnList">
+      <point x="-12.375" y="-26.0" />
+      <point x="257.2142857142857" y="410.0" />
+      <point x="211.5" y="410.0" />
+      <point x="70.5" y="37.0" />
+    </edge>
+    <edge source="gui.Eliza" target="gui.Response">
+      <point x="37.125" y="-26.0" />
+      <point x="306.7142857142857" y="420.0" />
+      <point x="398.0" y="420.0" />
+      <point x="32.0" y="26.0" />
+    </edge>
+    <edge source="gui.Response" target="gui.PigLatin">
+      <point x="-32.0" y="-26.0" />
+      <point x="334.0" y="286.0" />
+      <point x="291.0892857142857" y="286.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="game.Game" target="game.DatabaseWord">
+      <point x="-26.75" y="-26.0" />
+      <point x="418.8392857142857" y="77.0" />
+      <point x="406.5892857142857" y="77.0" />
+      <point x="-39.0" y="26.0" />
+    </edge>
+    <edge source="game.HangmanApp" target="game.Game">
+      <point x="-37.75" y="-26.0" />
+      <point x="407.8392857142857" y="179.0" />
+      <point x="418.8392857142857" y="179.0" />
+      <point x="-26.75" y="26.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.02793867120954" x="262.00000000000006" y="283.50000000000006" />
+  <SelectedNodes>
+    <node>gui.IColorCode</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
