@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="463.00000000000006" y="0.0">game.DatabaseWord</node>
+    <node x="316.50000000000006" y="338.0">gui.Eliza</node>
+    <node x="472.00000000000006" y="102.0">game.Game</node>
+    <node x="302.00000000000006" y="215.0">oop.Response</node>
+    <node x="0.0" y="204.0">util.FileOperationOnList</node>
+    <node x="450.00000000000006" y="215.0">game.HangmanApp</node>
+    <node x="0.0" y="435.0">oop.IColorCode</node>
+    <node x="307.00000000000006" y="102.0">oop.PigLatin</node>
+    <node x="153.0" y="435.0">Main</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="gui.Eliza" target="game.HangmanApp">
+      <point x="24.75" y="-26.0" />
+      <point x="390.75000000000006" y="308.0" />
+      <point x="495.50000000000006" y="308.0" />
+      <point x="-45.5" y="26.0" />
+    </edge>
+    <edge source="oop.Response" target="oop.PigLatin">
+      <point x="32.0" y="-26.0" />
+      <point x="398.00000000000006" y="179.0" />
+      <point x="395.50000000000006" y="179.0" />
+      <point x="29.5" y="26.0" />
+    </edge>
+    <edge source="gui.Eliza" target="util.FileOperationOnList">
+      <point x="-41.25" y="-26.0" />
+      <point x="324.75000000000006" y="318.0" />
+      <point x="70.5" y="318.0" />
+      <point x="-70.5" y="37.0" />
+    </edge>
+    <edge source="gui.Eliza" target="oop.Response">
+      <point x="-8.25" y="-26.0" />
+      <point x="357.75000000000006" y="298.0" />
+      <point x="334.00000000000006" y="298.0" />
+      <point x="-32.0" y="26.0" />
+    </edge>
+    <edge source="game.Game" target="game.DatabaseWord">
+      <point x="-34.5" y="-26.0" />
+      <point x="506.50000000000006" y="77.0" />
+      <point x="502.00000000000006" y="77.0" />
+      <point x="-39.0" y="26.0" />
+    </edge>
+    <edge source="game.HangmanApp" target="game.Game">
+      <point x="45.5" y="-26.0" />
+      <point x="586.5" y="179.0" />
+      <point x="575.5" y="179.0" />
+      <point x="34.5" y="26.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="316.0" y="223.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
