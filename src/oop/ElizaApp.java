@@ -87,13 +87,13 @@ public class ElizaApp {
             }
             if (question.equalsIgnoreCase("game")) {
                 HangmanApp app = new HangmanApp("\n");
-                app.setStart(true);
-                println(app.getGameStatus(""));
+                println(app.welcome());
                 while (app.isRun()) {
                     String str = input(getKeyboard().nextLine());
                     app.setGuess(str);
-                    println(app.getGameStatus(str));
+                    println(app.getResult());
                 }
+                println(app.exit());
                 continue;
             }
             if (response.isOptions(question)) {

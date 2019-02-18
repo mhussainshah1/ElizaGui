@@ -180,8 +180,9 @@ public class ElizaGui extends JFrame {
     private void gameRadioButtonItemStateChanged(ItemEvent evt) {
         if (gameRadioButton.isSelected()) {
             hangman = new HangmanApp(newline);
-            hangman.setStart(true);
-            print(hangman.getGameStatus(""));
+            print(hangman.welcome());
+        } else{
+            println(hangman.exit());
         }
     }
 
@@ -266,8 +267,9 @@ public class ElizaGui extends JFrame {
         appendToPane(textPane, input(message + "</br>"));
 
         if (gameRadioButton.isSelected()) {
-            println(hangman.getGameStatus(message));
-            if (hangman.isStop()) {//if game won or loose then clear selection
+            hangman.setGuess(message);
+            println(hangman.getResult());
+            if (!hangman.isRun()) {//if game won or loose then clear selection
                 buttonGroup1.clearSelection();
             }
         } else {

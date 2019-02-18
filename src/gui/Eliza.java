@@ -21,6 +21,7 @@ public class Eliza extends JFrame {
     private String newline;
     private List<String> history;
     private Response response;
+
     private Randomize random;
     private HangmanApp hangman;
 
@@ -61,7 +62,7 @@ public class Eliza extends JFrame {
             app.setVisible(true);
         });
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -184,8 +185,9 @@ public class Eliza extends JFrame {
     private void gameRadioButtonItemStateChanged(ItemEvent evt) {//GEN-FIRST:event_gameRadioButtonItemStateChanged
         if (gameRadioButton.isSelected()) {
             hangman = new HangmanApp(newline);
-            hangman.setStart(true);
-            print(hangman.getGameStatus(""));
+            println(hangman.welcome());
+        } else{
+            println(hangman.exit());
         }
     }//GEN-LAST:event_gameRadioButtonItemStateChanged
 
@@ -213,9 +215,9 @@ public class Eliza extends JFrame {
         String item = "";
         do {
             int index = random.getRandomNumber(0, history.size());
-            if (index != 0) {
+            if(index !=0 ){
                 item = history.get(index);
-            } else {
+            } else{
                 break;
             }
         } while (item.equals("") || item.equals("$"));
@@ -270,8 +272,9 @@ public class Eliza extends JFrame {
         appendToPane(textPane, input(message + "</br>"));
 
         if (gameRadioButton.isSelected()) {
-            println(hangman.getGameStatus(message));
-            if (hangman.isStop()) {//if game won or loose then clear selection
+            hangman.setGuess(message);
+            println(hangman.getResult());
+            if (!hangman.isRun()) {//if game won or loose then clear selection
                 buttonGroup1.clearSelection();
             }
         } else {
