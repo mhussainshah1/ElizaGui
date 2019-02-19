@@ -48,36 +48,36 @@ public class FileOperationOnList {
     //Write a File
     public void writeFile() throws FileNotFoundException {
         File file = new File(filePath);
-        PrintWriter writer = new PrintWriter(file);
-
-        StringBuilder builder = new StringBuilder();
-
-        for (String value : document) {
-            builder.append(value);
+        try (PrintWriter writer = new PrintWriter(file)) {
+            StringBuilder builder = new StringBuilder();
+            
+            for (String value : document) {
+                builder.append(value);
+            }
+            String text = builder.toString();
+            String html =   "<html> " + newline +
+                    "<head> " + newline +
+                    "<title> " +
+                    "</title>" + newline +
+                    "</head> " + newline +
+                    "<body>" + newline +
+                    text +
+                    "</body>" + newline +
+                    "</html>";
+            writer.println(html);
         }
-        String text = builder.toString();
-        String html =   "<html> " + newline +
-                        "<head> " + newline +
-                        "<title> " +
-                        "</title>" + newline +
-                        "</head> " + newline +
-                        "<body>" + newline +
-                        text +
-                        "</body>" + newline +
-                        "</html>";
-        writer.println(html);
-        writer.close();
     }
 
     public List<String> readLines(File file) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        List<String> results = new ArrayList<>();
-        String line = reader.readLine();
-        while (line != null) {
-            results.add(line);
-            line = reader.readLine();
+        List<String> results;
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            results = new ArrayList<>();
+            String line = reader.readLine();
+            while (line != null) {
+                results.add(line);
+                line = reader.readLine();
+            }
         }
-        reader.close();
         return results;
     }
 }

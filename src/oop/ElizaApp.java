@@ -54,7 +54,7 @@ public class ElizaApp {
     }
 
     public String welcome() {
-        history = new ArrayList<String>();
+        history = new ArrayList<>();
         FileOperationOnList fo = new FileOperationOnList(history, "history.html");
         try {
             fo.readFile();
@@ -64,7 +64,7 @@ public class ElizaApp {
         history = fo.getDocument();
         String item = "";
         do {
-            int index = random.getRandomNumber(0, (history.size())); // from line 3 to second last item
+            int index = random.getRandomNumber(0, (history.size()));
             item = history.get(index);
         } while (item.equals("") || item.equals("$"));
 

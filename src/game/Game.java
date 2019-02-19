@@ -3,6 +3,7 @@ package game;
 import util.Randomize;
 
 class Game {
+
     private static final int MAX_LIMIT = 6;
     private int gameCounter;
     private boolean run;
@@ -68,11 +69,11 @@ class Game {
                     run = false;
                     return string;
                 } else {
-                    string +=  getChance();
+                    string += getChance();
                 }
             } else {
-                string = "You have guessed incorrectly " + i + "/" + MAX_LIMIT+ " times. " + newline +
-                        getStatus();
+                string = "You have guessed incorrectly " + i + "/" + MAX_LIMIT + 
+                        " times. " + newline + getStatus();
 
                 if (i == MAX_LIMIT) {
                     string += looseGame();
@@ -110,15 +111,16 @@ class Game {
         return "Your guess so far:" + builder + newline;
     }
 
-    public String getChance(){
-        return newline +"Enter Letter, word guess or $ for Lifeline: ";
+    public String getChance() {
+        return newline + "Enter Letter, word guess or $ for Lifeline: ";
     }
 
     public String looseGame() {
-        return newline + "Sorry, you have no more guesses left. The word was " + word +newline;
+        return newline + "Sorry, you have no more guesses left. The word was " + 
+                word + newline;
     }
 
     public String wonGame() {
-        return newline+ "You've won! The word was " + builder + newline;
+        return newline + "You've won! The word was " + builder + newline;
     }
 }
