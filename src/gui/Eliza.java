@@ -21,7 +21,6 @@ public class Eliza extends JFrame {
     private String newline;
     private List<String> history;
     private Response response;
-
     private Randomize random;
     private HangmanApp hangman;
 
@@ -223,8 +222,8 @@ public class Eliza extends JFrame {
         } while (item.equals("") || item.equals("$"));
 
         history.clear();
-        return input("Welcome to Eliza<br />"
-                + "Good day , I remember, Last time you were talking about " + item);
+        return input("Welcome to Eliza" + newline +
+                "Good day , I remember, Last time you were talking about " + item);
 
     }
 
@@ -269,12 +268,12 @@ public class Eliza extends JFrame {
         this.oldMsg = message;
         textField.requestFocus();
         textField.setText("");
-        appendToPane(textPane, input(message + "</br>"));
+        appendToPane(textPane, input(message + newline));
 
         if (gameRadioButton.isSelected()) {
             hangman.setGuess(message);
             println(hangman.getResult());
-            if (!hangman.isRun()) {//if game won or loose then clear selection
+            if (!hangman.isRun()) {//if game stops then clear selection
                 buttonGroup1.clearSelection();
             }
         } else {
